@@ -7,6 +7,39 @@ export interface PeriodicElement {
   symbol: string;
 }
 
+export interface Request {
+  person: Person,
+  car: Car,
+  requestDate: Date,
+  status: Status
+}
+
+export interface Status {
+  valueEn: string
+
+}
+export interface Car {
+  model: CarModel,
+  number: string
+}
+
+export interface CarModel {
+  valueEn: string
+
+}
+
+export interface Person {
+  firstName: string,
+  lastName: string,
+  block: Block,
+  roomNumber: string
+}
+
+export interface Block {
+  number: string
+}
+
+
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
@@ -26,7 +59,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./request-list.component.scss']
 })
 export class RequestListComponent implements OnInit {
-  displayedColumns = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns = ['Person', 'Block', 'Room Number', 'Car', 'Status'];
   dataSource = ELEMENT_DATA;
 
   // data is the response from backend

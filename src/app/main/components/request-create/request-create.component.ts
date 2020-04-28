@@ -31,9 +31,31 @@ export class RequestCreateComponent implements OnInit {
   createData() {
     console.log(this.form.value);
     this.apiService.createRequest(this.form.value).subscribe((responseData) => {
-      this.router.navigate(['list']);
+      // this.router.navigate(['list']);
     });
 
   }
 
+  blocks: Block[] = [
+    {id: 1, number: 11},
+    {id: 2, number: 19},
+    {id: 3, number: 20},
+    {id: 4, number: 21},
+    {id: 5, number: 22},
+    {id: 6, number: 23},
+    {id: 7, number: 24},
+    {id: 8, number: 25},
+    {id: 9, number: 26},
+    {id: 10, number: 27},
+    {id: 11, number: 38},
+    {id: 12, number: 39}
+  ];
+
+}
+
+// import {Component} from '@angular/core';
+
+export interface Block {
+  id: number;
+  number: number;
 }

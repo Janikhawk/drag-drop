@@ -15,6 +15,10 @@ export class ApiService {
   }
 
   getList() {
-    return this.http.get('URL');
+    return this.http.get('http://localhost:8080/request/');
+  }
+
+  check(data) {
+    return this.http.post('URL', data);
   }
 }
