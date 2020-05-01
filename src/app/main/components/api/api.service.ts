@@ -11,7 +11,7 @@ export class ApiService {
   ) { }
 
   createRequest(data) {
-    return this.http.post('URL', data);
+    return this.http.post('http://localhost:8080/request/', data);
   }
 
   getList() {
@@ -19,6 +19,6 @@ export class ApiService {
   }
 
   check(data) {
-    return this.http.post('URL', data);
+    return this.http.post('http://localhost:8080/car/save-image', data);
   }
 }

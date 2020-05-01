@@ -13,11 +13,35 @@ export class RequestCreateComponent implements OnInit {
   form: FormGroup = this.fb.group({
     firstName: null,
     lastName: null,
-    address: null,
-    city: null,
-    state: null,
-    postalCode: null,
+    block: null,
+    roomNumber: null,
+    carModel: null,
+    carNumber: null
   });
+
+
+  blocks: Block[] = [
+    {id: 1, number: 11},
+    {id: 2, number: 19},
+    {id: 3, number: 20},
+    {id: 4, number: 21},
+    {id: 5, number: 22},
+    {id: 6, number: 23},
+    {id: 7, number: 24},
+    {id: 8, number: 25},
+    {id: 9, number: 26},
+    {id: 10, number: 27},
+    {id: 11, number: 38},
+    {id: 12, number: 39}
+  ];
+
+  carModels: CarModel[] = [
+    {id: 1, value_en: 'Mercedes'},
+    {id: 2, value_en: 'Audi'},
+    {id: 3, value_en: 'Volvo'},
+    {id: 4, value_en: 'BMW'},
+    {id: 5, value_en: 'Mazda'}
+  ];
 
   constructor(
     private fb: FormBuilder,
@@ -36,20 +60,7 @@ export class RequestCreateComponent implements OnInit {
 
   }
 
-  blocks: Block[] = [
-    {id: 1, number: 11},
-    {id: 2, number: 19},
-    {id: 3, number: 20},
-    {id: 4, number: 21},
-    {id: 5, number: 22},
-    {id: 6, number: 23},
-    {id: 7, number: 24},
-    {id: 8, number: 25},
-    {id: 9, number: 26},
-    {id: 10, number: 27},
-    {id: 11, number: 38},
-    {id: 12, number: 39}
-  ];
+
 
 }
 
@@ -58,4 +69,9 @@ export class RequestCreateComponent implements OnInit {
 export interface Block {
   id: number;
   number: number;
+}
+
+export interface CarModel {
+  id: number;
+  value_en: string;
 }

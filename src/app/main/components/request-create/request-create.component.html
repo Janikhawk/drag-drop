@@ -4,8 +4,8 @@
   <mat-card class="example-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Table</mat-card-title>
-      <mat-card-subtitle>some text</mat-card-subtitle>
+      <mat-card-title>Request</mat-card-title>
+      <mat-card-subtitle>Fill the form</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content class="content">
       <form class="example-form" [formGroup]="form">
@@ -26,8 +26,8 @@
         <p>
           <mat-form-field>
             <mat-label>Block</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let Block of blocks" [value]="Block.number">
+            <mat-select formControlName="block">
+              <mat-option *ngFor="let Block of blocks" [value]="Block">
                 {{Block.number}}
               </mat-option>
             </mat-select>
@@ -36,23 +36,22 @@
 
           <mat-form-field class="example-full-width">
             <mat-label>Room Number</mat-label>
-            <textarea matInput formControlName="address"></textarea>
+            <textarea matInput formControlName="roomNumber"></textarea>
           </mat-form-field>
         </p>
 
         <table class="example-full-width" cellspacing="0"><tr>
-          <td><mat-form-field class="example-full-width">
-            <mat-label>City</mat-label>
-            <input matInput placeholder="Ex. San Francisco" formControlName="city">
+          <td><mat-form-field>
+            <mat-label>Car Model</mat-label>
+            <mat-select formControlName="carModel">
+              <mat-option *ngFor="let CarModel of carModels" [value]="CarModel">
+                {{CarModel.value_en}}
+              </mat-option>
+            </mat-select>
           </mat-form-field></td>
           <td><mat-form-field class="example-full-width">
-            <mat-label>State</mat-label>
-            <input matInput placeholder="Ex. California" formControlName="state">
-          </mat-form-field></td>
-          <td><mat-form-field class="example-full-width">
-            <mat-label>Postal Code</mat-label>
-            <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043" formControlName="postalCode">
-            <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+            <mat-label>Car Number</mat-label>
+            <input matInput placeholder="Ex. California" formControlName="carNumber">
           </mat-form-field></td>
         </tr></table>
       </form>
